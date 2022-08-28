@@ -1,36 +1,28 @@
-                         __      _ _ ___ _               
+## Fail2Ban 简单修复了在Python3及其以上无法使用的错误,编译安装即可.(这问题出现很久,官方都没修,比较不爽.本人Python版本3.10.6)
+__      _ _ ___ _               
                         / _|__ _(_) |_  ) |__  __ _ _ _  
                        |  _/ _` | | |/ /| '_ \/ _` | ' \ 
                        |_| \__,_|_|_/___|_.__/\__,_|_||_|
                        v1.0.1.dev1            20??/??/??
 
-## Fail2Ban: ban hosts that cause multiple authentication errors
+## Fail2Ban: 禁止造成多次认证错误的主机
 
-Fail2Ban scans log files like `/var/log/auth.log` and bans IP addresses conducting
-too many failed login attempts. It does this by updating system firewall rules
-to reject new connections from those IP addresses, for a configurable amount
-of time. Fail2Ban comes out-of-the-box ready to read many standard log files,
-such as those for sshd and Apache, and is easily configured to read any log
-file of your choosing, for any error you wish.
-
-Though Fail2Ban is able to reduce the rate of incorrect authentication
-attempts, it cannot eliminate the risk presented by weak authentication.
-Set up services to use only two factor, or public/private authentication
-mechanisms if you really want to protect services.
+Fail2Ban扫描日志文件，如`/var/log/auth.log`，并禁止IP地址进行过多的失败登录尝试。它通过更新系统防火墙规则，拒绝来自这些IP地址的新连接，并在可配置的时间内完成这一工作。Fail2Ban开箱即用，可以读取许多标准的日志文件，如sshd和Apache的日志文件，也可以轻松配置为读取你选择的任何日志文件，以处理你希望的任何错误。
+尽管Fail2Ban能够降低错误的认证尝试率，但它不能消除弱认证带来的风险。
+如果你真的想保护服务，请将服务设置为只使用双因素，或公共/私人认证机制。
      
-<img src="http://www.worldipv6launch.org/wp-content/themes/ipv6/downloads/World_IPv6_launch_logo.svg" height="52pt"/> | Since v0.10 fail2ban supports the matching of IPv6 addresses.
+<img src="http://www.worldipv6launch.org/wp-content/themes/ipv6/downloads/World_IPv6_launch_logo.svg" height="52pt"/> | 从v0.10开始，fail2ban支持IPv6地址的匹配。
 ------|------
 
-This README is a quick introduction to Fail2Ban. More documentation, FAQ, and HOWTOs
-to be found on fail2ban(1) manpage, [Wiki](https://github.com/fail2ban/fail2ban/wiki),
-[Developers documentation](https://fail2ban.readthedocs.io/)
-and the website: https://www.fail2ban.org
+此README是对Fail2Ban的快速介绍。更多的文档、FAQ和HOWTOs
+可在 fail2ban(1) manpage, [Wiki](https://github.com/fail2ban/fail2ban/wiki) 找到。
+[开发人员文档](https://fail2ban.readthedocs.io/)
+和网站：https://www.fail2ban.org
 
-Installation:
+安装:
 -------------
 
-**It is possible that Fail2Ban is already packaged for your distribution.  In
-this case, you should use that instead.**
+**有可能Fail2Ban已经为你的发行版打包了。 在这种情况下 这种情况下，你应该用它来代替。**
 
 Required:
 - [Python2 >= 2.7 or Python >= 3.2](https://www.python.org) or [PyPy](https://pypy.org)
