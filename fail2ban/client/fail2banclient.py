@@ -431,7 +431,7 @@ class Fail2banClient(Fail2banCmdLine, Thread):
 			return False
 		finally:
 			self._alive = False
-			for s, sh in _prev_signals.iteritems():
+			for s, sh in _prev_signals.items():
 				signal.signal(s, sh)
 
 
